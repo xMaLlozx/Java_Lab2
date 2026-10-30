@@ -8,7 +8,7 @@ public class Triangle {
     }
 
     public double Area_Triang(int a, int b, int c){
-        int p = (a + b + c)/2;
+        double p = (a + b + c) / 2.0;
         return Math.sqrt(p*(p-a)*(p-b)*(p-c));
     }
 

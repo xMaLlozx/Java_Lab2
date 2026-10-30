@@ -4,7 +4,13 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Store {
-    Map<String, Product> store = new HashMap<>();
+    private Map<String, Product> store = new HashMap<>();
+    public int getQuantity(String name) {
+        if (name == null || !store.containsKey(name)) {
+            throw new IllegalStateException("Такого товара нет в магазине");
+        }
+        return store.get(name).getQuantity();
+    }
     public void add_Product(String name, double price, int quantity){
         store.put(name, new Product(name, price, quantity));
     }

@@ -14,6 +14,8 @@ public class Product {
         Quantity = quantity;
     }
     public void removeProduct(int requestProd){
+        if (requestProd <= 0)
+            throw new IllegalArgumentException("Количество должно быть больше нуля");
         if(requestProd > this.Quantity)
             throw new IllegalStateException("Недостаточно товаров на складе");
         Quantity -= requestProd;
